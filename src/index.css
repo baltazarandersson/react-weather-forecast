@@ -6,6 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --background-dark: #100e1d;
   --background-normal: #1e213a;
+  --font-dimmed: #a09fb1;
   background-color: var(--background-dark);
 }
 
