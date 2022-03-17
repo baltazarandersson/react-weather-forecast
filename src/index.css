@@ -9,6 +9,7 @@ body {
   --font-dimmed: #a09fb1;
   --font: #e7e7eb;
   background-color: var(--background-dark);
+  max-width: 100vw;
 }
 
 code {
