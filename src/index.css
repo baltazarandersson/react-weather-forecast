@@ -1,12 +1,13 @@
 body {
   color: #e7e7eb;
   margin: 0;
-  font-family: "Product Sans", sans-serif;
+  font-family: "Product Sans Medium", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --background-dark: #100e1d;
   --background-normal: #1e213a;
   --font-dimmed: #a09fb1;
+  --font: #e7e7eb;
   background-color: var(--background-dark);
 }
 
