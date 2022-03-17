@@ -2,6 +2,12 @@
 
 ### Design extracted from devchallenges.io
 
+#### Tools used :
+- React
+- wouter
+- Moment.js
+- metaweather.com public API
+
 ## Video of the App running
 
 
