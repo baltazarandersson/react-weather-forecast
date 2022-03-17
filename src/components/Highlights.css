@@ -1,0 +1,12 @@
+.highlights-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.highlights > h2 {
+  text-align: start;
+  font-family: "Product Sans", sans-serif;
+}

@@ -1,0 +1,26 @@
+.day-card {
+  width: 120px;
+  height: 177px;
+  background-color: var(--background-normal);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.day-card p {
+  margin: 0;
+}
+.day-card img {
+  width: 3rem;
+}
+.day-card p:nth-child(2) {
+  color: var(--font-dimmed);
+}
+
+.day-temps {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

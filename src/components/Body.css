@@ -1,0 +1,9 @@
+.body {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding: 3rem 6rem;
+  gap: 2rem;
+}

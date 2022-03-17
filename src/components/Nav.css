@@ -1,0 +1,85 @@
+.nav {
+  width: 30%;
+  min-height: 100vh;
+  background-color: var(--background-normal);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 3rem;
+  align-items: center;
+  gap: 4rem;
+}
+.nav form {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.nav input {
+  width: 161px;
+  height: 40px;
+  background: #6e707a;
+  outline: none;
+  text-align: center;
+  color: var(--font);
+  border: none;
+  transition: all 0.5s ease;
+}
+.nav input:focus,
+input:hover {
+  width: 100%;
+}
+.nav input,
+input::placeholder {
+  font-size: 1rem;
+  color: var(--font);
+  font-family: "Product Sans Light", sans-serif;
+}
+.nav img {
+  width: 160px;
+}
+.nav .actual-temp {
+  align-items: center;
+  display: flex;
+  font-size: 4rem;
+}
+.nav .actual-temp p:nth-child(2) {
+  font-family: "Product Sans Light", sans-serif;
+  font-size: 2rem;
+  color: var(--font-dimmed);
+}
+
+.nav .weather-state {
+  font-family: "Product Sans", sans-serif;
+  font-size: 2rem;
+  color: var(--font-dimmed);
+}
+.nav .weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nav .weather-info .weather-date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Product Sans", sans-serif;
+  color: var(--font-dimmed);
+}
+.nav .weather-info .weather-date div {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--font-dimmed);
+}
+.nav .weather-info .weather-day {
+  color: var(--font-dimmed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.nav .weather-info .weather-day img {
+  filter: invert(78%) sepia(5%) saturate(690%) hue-rotate(204deg)
+    brightness(82%) contrast(86%);
+  width: 1rem;
+}
