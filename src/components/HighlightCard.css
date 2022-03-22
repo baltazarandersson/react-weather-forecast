@@ -9,10 +9,7 @@
   box-sizing: border-box;
   padding: 1rem 3rem;
 }
-.highlight-card h2,
-p {
-  margin: 0%;
-}
+
 .card-small {
   height: 159px;
 }

@@ -51,6 +51,7 @@ export default function Nav({ params }) {
       </div>
     );
   }
+
   return (
     <div className="nav">
       <form

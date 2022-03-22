@@ -8,11 +8,13 @@ export default async function getLocationCurrentWeather(keyword) {
 
   const response = await fetchResponse.json();
 
+  console.log(response);
+
   if (response.cod !== 200) {
     response.error = true;
     return response;
   }
-  const { dt, dt: id, name: location_name } = response;
+  const { dt, dt: id } = response;
 
   let { visibility } = response;
   visibility = visibility / 1000;
@@ -30,6 +32,8 @@ export default async function getLocationCurrentWeather(keyword) {
     weather_state_name.charAt(0).toUpperCase() + weather_state_name.slice(1);
 
   const coords = response.coord;
+
+  const location_name = response.name + ", " + response.sys.country;
 
   return {
     visibility,
