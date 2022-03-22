@@ -6,7 +6,7 @@
 - React
 - wouter
 - Moment.js
-- openweather.org public API
+- [openweathermap.org](https://openweathermap.org/) public API
 
 ## [Online Demo](https://weather-forecast-baltazar.vercel.app/)
 
