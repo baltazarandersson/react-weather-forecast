@@ -5,8 +5,13 @@ export default async function getLocationCurrentWeather(keyword) {
   const fetchResponse = await fetch(
     `${API_URL}/weather?q=${keyword}&units=metric${API_KEY}`
   );
+
   const response = await fetchResponse.json();
 
+  if (response.cod !== 200) {
+    response.error = true;
+    return response;
+  }
   const { dt, dt: id, name: location_name } = response;
 
   let { visibility } = response;

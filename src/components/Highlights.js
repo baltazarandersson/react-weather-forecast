@@ -2,6 +2,7 @@ import { useState, useEffect, React } from "react";
 import HighlightCard from "./HighlightCard";
 import "./Highlights.css";
 import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
+import Error from "./Error";
 
 export default function Hightlights({ keyword }) {
   const [todayData, updateWeather] = useState([]);
@@ -21,6 +22,10 @@ export default function Hightlights({ keyword }) {
         <div className="loader body-loader">Loading...</div>
       </div>
     );
+  }
+
+  if (todayData.error === true) {
+    return <div className="highlights"></div>;
   }
 
   return (

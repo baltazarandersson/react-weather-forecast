@@ -12,10 +12,15 @@ export default function DailyForecast({ keyword }) {
   useEffect(() => {
     setLoading(true);
     getLocationCurrentWeather(keyword).then((locationData) => {
-      getLocationDailyData(locationData.coords).then((data) => {
-        updateWeather(data);
+      if (locationData.error === true) {
+        updateWeather(locationData);
         setLoading(false);
-      });
+      } else {
+        getLocationDailyData(locationData.coords).then((data) => {
+          updateWeather(data);
+          setLoading(false);
+        });
+      }
     });
   }, [keyword]);
 
@@ -33,6 +38,10 @@ export default function DailyForecast({ keyword }) {
         <div className="loader body-loader">Loading...</div>
       </div>
     );
+  }
+
+  if (weatherData.error === true) {
+    return <div className="daily-forecast"></div>;
   }
 
   return (

@@ -3,6 +3,7 @@ import "./Nav.css";
 import { useLocation } from "wouter";
 import "./Loader.css";
 import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
+import Error from "./Error";
 
 export default function Nav({ params }) {
   const [todayData, updateWeather] = useState([]);
@@ -11,15 +12,16 @@ export default function Nav({ params }) {
   const [loading, setLoading] = useState(false);
 
   const { keyword } = params;
-  let background;
 
   useEffect(() => {
     setLoading(true);
 
-    getLocationCurrentWeather(keyword).then((data) => {
-      updateWeather(data);
-      setLoading(false);
-    });
+    getLocationCurrentWeather(keyword)
+      .then((data) => {
+        updateWeather(data);
+        setLoading(false);
+      })
+      .catch(console.log);
   }, [keyword]);
 
   if (loading) {
@@ -30,6 +32,25 @@ export default function Nav({ params }) {
     );
   }
 
+  if (todayData.error === true) {
+    return (
+      <div className="nav">
+        <form
+          onSubmit={(evt) => {
+            evt.preventDefault();
+            setLocation(`/location/${query}`);
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Search for places"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </form>
+        <Error error={todayData}></Error>
+      </div>
+    );
+  }
   return (
     <div className="nav">
       <form

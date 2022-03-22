@@ -7,7 +7,7 @@
   box-sizing: border-box;
   padding: 3rem;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 .nav form {
   width: 100%;
@@ -82,4 +82,9 @@ input::placeholder {
   filter: invert(78%) sepia(5%) saturate(690%) hue-rotate(204deg)
     brightness(82%) contrast(86%);
   width: 1rem;
+}
+@media only screen and (max-width: 780px) {
+  .nav {
+    width: 100%;
+  }
 }

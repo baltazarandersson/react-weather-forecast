@@ -10,3 +10,8 @@
   text-align: start;
   font-family: "Product Sans", sans-serif;
 }
+@media only screen and (max-width: 780px) {
+  .highlights-container {
+    justify-content: center;
+  }
+}
