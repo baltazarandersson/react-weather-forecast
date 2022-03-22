@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from "react";
 import Day from "./Day";
-import getLocation from "../services/getLocation";
-import getWeatherData from "../services/getWeatherData";
 import "./DailyForecast.css";
 import moment from "moment";
+import getLocationDailyData from "../services/getLocationDailyData";
+import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
 
 export default function DailyForecast({ keyword }) {
   const [weatherData, updateWeather] = useState([]);
@@ -11,8 +11,8 @@ export default function DailyForecast({ keyword }) {
 
   useEffect(() => {
     setLoading(true);
-    getLocation(keyword).then((id) => {
-      getWeatherData(id).then((data) => {
+    getLocationCurrentWeather(keyword).then((locationData) => {
+      getLocationDailyData(locationData.coords).then((data) => {
         updateWeather(data);
         setLoading(false);
       });

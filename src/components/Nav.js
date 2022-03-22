@@ -1,9 +1,8 @@
 import { React, useEffect, useState } from "react";
 import "./Nav.css";
-import getLocation from "../services/getLocation";
-import getWeatherData from "../services/getWeatherData";
 import { useLocation } from "wouter";
 import "./Loader.css";
+import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
 
 export default function Nav({ params }) {
   const [todayData, updateWeather] = useState([]);
@@ -12,18 +11,16 @@ export default function Nav({ params }) {
   const [loading, setLoading] = useState(false);
 
   const { keyword } = params;
+  let background;
 
   useEffect(() => {
     setLoading(true);
-    getLocation(keyword).then((id) => {
-      getWeatherData(id).then((weekData) => {
-        updateWeather(weekData[0]);
-        setLoading(false);
-      });
+
+    getLocationCurrentWeather(keyword).then((data) => {
+      updateWeather(data);
+      setLoading(false);
     });
   }, [keyword]);
-
-  console.log(loading);
 
   if (loading) {
     return (
@@ -49,7 +46,7 @@ export default function Nav({ params }) {
       </form>
       <img
         alt="weather icon"
-        src={`https://www.metaweather.com/static/img/weather/${todayData.weather_state}.svg`}
+        src={`https://openweathermap.org/img/wn/${todayData.weather_state}@4x.png`}
       ></img>
       <div className="actual-temp">
         <p>{Math.round(todayData.the_temp * 10) / 10}</p>

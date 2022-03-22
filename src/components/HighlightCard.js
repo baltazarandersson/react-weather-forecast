@@ -5,9 +5,9 @@ import HighlightBottom from "./HighlightBottom";
 
 export default function HightlightCard({ type, data }) {
   const cardType = {
-    wind: { title: "Wind status", unit: "mph" },
+    wind: { title: "Wind status", unit: "km/h" },
     humidity: { title: "Humidity", unit: "%" },
-    visibility: { title: "Visibility", unit: "miles" },
+    visibility: { title: "Visibility", unit: "kilometers" },
     pressure: { title: "Air Pressure", unit: "mb" },
   };
 

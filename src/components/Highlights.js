@@ -1,8 +1,7 @@
 import { useState, useEffect, React } from "react";
-import getLocation from "../services/getLocation";
-import getWeatherData from "../services/getWeatherData";
 import HighlightCard from "./HighlightCard";
 import "./Highlights.css";
+import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
 
 export default function Hightlights({ keyword }) {
   const [todayData, updateWeather] = useState([]);
@@ -10,11 +9,9 @@ export default function Hightlights({ keyword }) {
 
   useEffect(() => {
     setLoading(true);
-    getLocation(keyword).then((id) => {
-      getWeatherData(id).then((weekData) => {
-        updateWeather(weekData[0]);
-        setLoading(false);
-      });
+    getLocationCurrentWeather(keyword).then((data) => {
+      updateWeather(data);
+      setLoading(false);
     });
   }, [keyword]);
 

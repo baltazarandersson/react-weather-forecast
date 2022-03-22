@@ -7,7 +7,7 @@ export default function Day({ date, max_temp, min_temp, weather_state }) {
       {date}
       <img
         alt="weather icon"
-        src={`https://www.metaweather.com/static/img/weather/${weather_state}.svg`}
+        src={`https://openweathermap.org/img/wn/${weather_state}@4x.png`}
       ></img>
       <div className="day-temps">
         <p>{Math.round(max_temp) + "°C"}</p>
