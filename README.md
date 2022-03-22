@@ -8,7 +8,7 @@
 - Moment.js
 - [openweathermap.org](https://openweathermap.org/) public API
 
-## [Online Demo](https://weather-forecast-baltazar.vercel.app/)
+## [Online Demo](https://weather-forecast-chi.vercel.app/)
 
 ### Desktop preview
 ![desktop](https://i.imgur.com/xBg9W6C.png)
