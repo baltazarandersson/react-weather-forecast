@@ -3,8 +3,8 @@
 ### Design extracted from devchallenges.io
 
 #### Tools used :
-- React
-- wouter
+- React.js
+- Wouter
 - Moment.js
 - [openweathermap.org](https://openweathermap.org/) public API
 
