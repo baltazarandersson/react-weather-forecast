@@ -1,9 +1,10 @@
 import { React, useEffect, useState } from "react";
-import Day from "./Day";
-import "./DailyForecast.css";
 import moment from "moment";
-import getLocationDailyData from "../services/getLocationDailyData";
-import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
+import Day from "components/Day";
+import { Spinner } from "components/Spinner";
+import getLocationDailyData from "services/getLocationDailyData";
+import getLocationCurrentWeather from "services/getLocationCurrentWeather";
+import "./index.css";
 
 export default function DailyForecast({ keyword }) {
   const [weatherData, updateWeather] = useState([]);
@@ -33,11 +34,7 @@ export default function DailyForecast({ keyword }) {
   }
 
   if (loading) {
-    return (
-      <div className="daily-forecast">
-        <div className="loader body-loader">Loading...</div>
-      </div>
-    );
+    return <Spinner spinnerClass={"body-loader"} />;
   }
 
   if (weatherData.error === true) {

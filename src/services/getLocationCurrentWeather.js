@@ -8,8 +8,6 @@ export default async function getLocationCurrentWeather(keyword) {
 
   const response = await fetchResponse.json();
 
-  console.log(response);
-
   if (response.cod !== 200) {
     response.error = true;
     return response;

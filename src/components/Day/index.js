@@ -1,5 +1,5 @@
 import React from "react";
-import "./Day.css";
+import "./index.css";
 
 export default function Day({ date, max_temp, min_temp, weather_state }) {
   return (

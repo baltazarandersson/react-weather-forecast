@@ -1,8 +1,8 @@
 import { useState, useEffect, React } from "react";
-import HighlightCard from "./HighlightCard";
-import "./Highlights.css";
-import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
-import Error from "./Error";
+import HighlightCard from "components/HighlightCard";
+import getLocationCurrentWeather from "services/getLocationCurrentWeather";
+import { Spinner } from "components/Spinner";
+import "./index.css";
 
 export default function Hightlights({ keyword }) {
   const [todayData, updateWeather] = useState([]);
@@ -17,11 +17,7 @@ export default function Hightlights({ keyword }) {
   }, [keyword]);
 
   if (loading) {
-    return (
-      <div className="daily-forecast">
-        <div className="loader body-loader">Loading...</div>
-      </div>
-    );
+    return <Spinner spinnerClass={"body-loader"} />;
   }
 
   if (todayData.error === true) {

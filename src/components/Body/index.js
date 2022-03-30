@@ -1,6 +1,6 @@
-import "./Body.css";
-import DailyForecast from "./DailyForecast";
-import Highlights from "./Highlights";
+import "./index.css";
+import DailyForecast from "components/DailyForecast";
+import Highlights from "components/Highlights";
 
 export default function Body({ params }) {
   const { keyword } = params;

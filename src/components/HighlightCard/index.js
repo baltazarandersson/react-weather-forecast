@@ -1,7 +1,7 @@
-import { React, useEffect } from "react";
-import "./HighlightCard.css";
-import cardClass from "../services/cardClass";
-import HighlightBottom from "./HighlightBottom";
+import { React } from "react";
+import "./index.css";
+import cardClass from "services/cardClass";
+import HighlightBottom from "components/HighlightBottom";
 
 export default function HightlightCard({ type, data }) {
   const cardType = {

@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from "react";
-import "./Nav.css";
 import { useLocation } from "wouter";
-import "./Loader.css";
-import getLocationCurrentWeather from "../services/getLocationCurrentWeather";
-import Error from "./Error";
+import getLocationCurrentWeather from "services/getLocationCurrentWeather";
+import Error from "components/Error";
+import { Spinner } from "components/Spinner";
+import "./index.css";
 
 export default function Nav({ params }) {
   const [todayData, updateWeather] = useState([]);
@@ -27,7 +27,7 @@ export default function Nav({ params }) {
   if (loading) {
     return (
       <div className="nav">
-        <div className="loader nav-loader">Loading...</div>
+        <Spinner spinnerClass={"nav-loader"} />
       </div>
     );
   }
