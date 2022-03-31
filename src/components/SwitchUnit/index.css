@@ -25,3 +25,8 @@
   color: var(--background-normal);
   background: var(--font);
 }
+@media only screen and (max-width: 780px) {
+  .switch-container {
+    padding: 1rem;
+  }
+}
