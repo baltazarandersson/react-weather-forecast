@@ -9,8 +9,7 @@
 }
 @media only screen and (max-width: 780px) {
   .daily-forecast {
-    justify-content: space-evenly;
-    padding: 1rem;
+    padding: 1rem 0rem;
     gap: 2rem;
   }
 }

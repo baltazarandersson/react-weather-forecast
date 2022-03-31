@@ -1,0 +1,27 @@
+.switch-container {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 1rem;
+  width: 100%;
+}
+.switch-container__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--background-normal);
+  color: var(--font);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.switch-container__button--active {
+  color: var(--background-normal);
+  background: var(--font);
+}

@@ -4,12 +4,14 @@ import getLocationCurrentWeather from "services/getLocationCurrentWeather";
 import Error from "components/Error";
 import { Spinner } from "components/Spinner";
 import "./index.css";
+import { useUnitConversor } from "hooks/useUnitConversor";
 
 export default function Nav({ params }) {
   const [todayData, updateWeather] = useState([]);
   const [location, setLocation] = useLocation();
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const { temp: theTemp, unit } = useUnitConversor(todayData.the_temp);
 
   const { keyword } = params;
 
@@ -71,8 +73,8 @@ export default function Nav({ params }) {
         src={`https://openweathermap.org/img/wn/${todayData.weather_state}@4x.png`}
       ></img>
       <div className="actual-temp">
-        <p>{Math.round(todayData.the_temp * 10) / 10}</p>
-        <p>°C</p>
+        <p>{theTemp}</p>
+        <p>{unit}</p>
       </div>
       <div className="weather-state">{todayData.weather_state_name}</div>
       <div className="weather-info">

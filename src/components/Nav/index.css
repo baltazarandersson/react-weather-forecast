@@ -25,11 +25,11 @@
   transition: all 0.5s ease;
 }
 .nav input:focus,
-input:hover {
+.nav input:hover {
   width: 100%;
 }
 .nav input,
-input::placeholder {
+.nav input::placeholder {
   font-size: 1rem;
   color: var(--font);
   font-family: "Product Sans Light", sans-serif;
